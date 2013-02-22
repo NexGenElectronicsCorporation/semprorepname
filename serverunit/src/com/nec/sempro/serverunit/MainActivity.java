@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 	        // no camera on this device
 	        return false;
 	    }
-	    private void cameraavailableforuse() {
+	    private  cameraavailableforuse() {
 			
 			
 		}
