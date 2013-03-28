@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+android:id="@+id/widget"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" tools:ignore="HardcodedText">
+
+<ImageView
+    android:id="@+id/imageView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:contentDescription="TODO"
+    android:src="@drawable/popup_bg"
+    tools:ignore="ContentDescription" />
+
+<Button
+    android:id="@+id/widget42"
+    android:layout_width="135dp"
+    android:layout_height="wrap_content"
+    android:layout_alignBaseline="@+id/widget41"
+    android:layout_alignBottom="@+id/widget41"
+    android:layout_alignRight="@+id/imageView1"
+    android:layout_marginRight="14dp"
+    android:text="Discard"
+    android:textSize="26sp"
+    android:textStyle="bold|italic"
+    android:typeface="sans" />
+
+<Button
+    android:id="@+id/widget41"
+    android:layout_width="109dp"
+    android:layout_height="wrap_content"
+    android:layout_alignBottom="@+id/imageView1"
+    android:layout_alignLeft="@+id/poptext"
+    android:layout_marginBottom="14dp"
+    android:text="view"
+    android:textSize="26sp"
+    android:textStyle="bold|italic"
+    android:typeface="sans" />
+
+<TextView
+    android:id="@+id/poptext"
+    android:layout_width="290dp"
+    android:layout_height="201dp"
+    android:layout_above="@+id/widget42"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="82dp"
+    android:textAppearance="@style/AppBaseTheme"
+    android:textColor="#ff000000"
+    android:textSize="24sp" />
+
+</RelativeLayout>
