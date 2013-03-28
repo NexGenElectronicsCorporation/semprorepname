@@ -19,11 +19,11 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.streaming.rtp;
+package com.nec.sempro.serverunit.link.streaming.rtp;
 
 import java.io.IOException;
 
-import net.majorkernelpanic.streaming.rtp.AbstractPacketizer.Statistics;
+import com.nec.sempro.serverunit.link.streaming.rtp.AbstractPacketizer.Statistics;
 
 import android.os.SystemClock;
 import android.util.Log;

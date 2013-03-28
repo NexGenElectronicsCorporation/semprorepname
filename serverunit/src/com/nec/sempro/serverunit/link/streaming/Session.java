@@ -18,19 +18,19 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.streaming;
+package com.nec.sempro.serverunit.link.streaming;
 
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import net.majorkernelpanic.streaming.audio.AACStream;
-import net.majorkernelpanic.streaming.audio.AMRNBStream;
-import net.majorkernelpanic.streaming.audio.GenericAudioStream;
-import net.majorkernelpanic.streaming.video.H263Stream;
-import net.majorkernelpanic.streaming.video.H264Stream;
-import net.majorkernelpanic.streaming.video.VideoQuality;
-import net.majorkernelpanic.streaming.video.VideoStream;
+import com.nec.sempro.serverunit.link.streaming.audio.AACStream;
+import com.nec.sempro.serverunit.link.streaming.audio.AMRNBStream;
+import com.nec.sempro.serverunit.link.streaming.audio.GenericAudioStream;
+import com.nec.sempro.serverunit.link.streaming.video.H263Stream;
+import com.nec.sempro.serverunit.link.streaming.video.H264Stream;
+import com.nec.sempro.serverunit.link.streaming.video.VideoQuality;
+import com.nec.sempro.serverunit.link.streaming.video.VideoStream;
 import android.util.Log;
 
 /**

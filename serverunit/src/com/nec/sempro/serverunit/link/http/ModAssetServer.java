@@ -19,9 +19,9 @@
  */
 
 
-package net.majorkernelpanic.http;
+package com.nec.sempro.serverunit.link.http;
 
-import static net.majorkernelpanic.http.TinyHttpServer.TAG;
+import static com.nec.sempro.serverunit.link.http.TinyHttpServer.TAG;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

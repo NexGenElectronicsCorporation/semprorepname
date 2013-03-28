@@ -18,10 +18,11 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.spydroid.ui;
+package com.nec.sempro.serverunit.link.spydroid.ui;
 
-import net.majorkernelpanic.spydroid.R;
-import net.majorkernelpanic.spydroid.SpydroidApplication;
+//import net.majorkernelpanic.spydroid.R;
+import com.nec.sempro.serverunit.R;
+import com.nec.sempro.serverunit.link.spydroid.SpydroidApplication;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;

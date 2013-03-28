@@ -18,16 +18,16 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.spydroid.api;
+package com.nec.sempro.serverunit.link.spydroid.api;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
 
-import net.majorkernelpanic.http.TinyHttpServer;
-import net.majorkernelpanic.spydroid.SpydroidApplication;
-import net.majorkernelpanic.streaming.misc.HttpServer;
+import com.nec.sempro.serverunit.link.http.TinyHttpServer;
+import com.nec.sempro.serverunit.link.spydroid.SpydroidApplication;
+import com.nec.sempro.serverunit.link.streaming.misc.HttpServer;
 
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpException;

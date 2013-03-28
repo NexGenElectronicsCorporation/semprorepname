@@ -18,15 +18,16 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.spydroid.api;
+package com.nec.sempro.serverunit.link.spydroid.api;
 
 import java.lang.reflect.Field;
 
-import net.majorkernelpanic.spydroid.R;
-import net.majorkernelpanic.spydroid.SpydroidApplication;
-import net.majorkernelpanic.streaming.Session;
-import net.majorkernelpanic.streaming.SessionManager;
-import net.majorkernelpanic.streaming.video.VideoQuality;
+//import com.nec.sempro.serverunit.link.spydroid.R;
+import com.nec.sempro.serverunit.R;
+import com.nec.sempro.serverunit.link.spydroid.SpydroidApplication;
+import com.nec.sempro.serverunit.link.streaming.Session;
+import com.nec.sempro.serverunit.link.streaming.SessionManager;
+import com.nec.sempro.serverunit.link.streaming.video.VideoQuality;
 
 import org.json.JSONArray;
 import org.json.JSONException;

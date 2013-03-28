@@ -21,7 +21,7 @@
  * 
  */
 
-package net.majorkernelpanic.http;
+package com.nec.sempro.serverunit.link.http;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

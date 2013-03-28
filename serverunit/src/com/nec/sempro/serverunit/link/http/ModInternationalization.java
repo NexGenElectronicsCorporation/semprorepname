@@ -18,9 +18,9 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.http;
+package com.nec.sempro.serverunit.link.http;
 
-import static net.majorkernelpanic.http.TinyHttpServer.TAG;
+import static com.nec.sempro.serverunit.link.http.TinyHttpServer.TAG;
 
 import java.io.IOException;
 import java.io.OutputStream;

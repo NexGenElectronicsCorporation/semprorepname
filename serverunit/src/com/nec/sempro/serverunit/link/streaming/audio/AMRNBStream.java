@@ -18,12 +18,12 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.streaming.audio;
+package com.nec.sempro.serverunit.link.streaming.audio;
 
 import java.io.IOException;
 
-import net.majorkernelpanic.streaming.MediaStream;
-import net.majorkernelpanic.streaming.rtp.AMRNBPacketizer;
+import com.nec.sempro.serverunit.link.streaming.MediaStream;
+import com.nec.sempro.serverunit.link.streaming.rtp.AMRNBPacketizer;
 import android.media.MediaRecorder;
 
 /**

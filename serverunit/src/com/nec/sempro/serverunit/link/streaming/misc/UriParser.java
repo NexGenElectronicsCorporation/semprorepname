@@ -18,7 +18,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.streaming.misc;
+package com.nec.sempro.serverunit.link.streaming.misc;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -27,8 +27,8 @@ import java.net.UnknownHostException;
 import java.util.Iterator;
 import java.util.List;
 
-import net.majorkernelpanic.streaming.Session;
-import net.majorkernelpanic.streaming.video.VideoQuality;
+import com.nec.sempro.serverunit.link.streaming.Session;
+import com.nec.sempro.serverunit.link.streaming.video.VideoQuality;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;

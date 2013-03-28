@@ -18,7 +18,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.streaming.misc;
+package com.nec.sempro.serverunit.link.streaming.misc;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,8 +33,8 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.majorkernelpanic.http.TinyHttpServer;
-import net.majorkernelpanic.streaming.Session;
+import com.nec.sempro.serverunit.link.http.TinyHttpServer;
+import com.nec.sempro.serverunit.link.streaming.Session;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;

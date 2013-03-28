@@ -18,13 +18,13 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.streaming.video;
+package com.nec.sempro.serverunit.link.streaming.video;
 
 import java.io.IOException;
 
-import net.majorkernelpanic.streaming.MediaStream;
-import net.majorkernelpanic.streaming.rtp.H263Packetizer;
-import net.majorkernelpanic.streaming.rtp.H264Packetizer;
+import com.nec.sempro.serverunit.link.streaming.MediaStream;
+import com.nec.sempro.serverunit.link.streaming.rtp.H263Packetizer;
+import com.nec.sempro.serverunit.link.streaming.rtp.H264Packetizer;
 import android.content.Context;
 import android.media.MediaRecorder;
 import android.util.Log;

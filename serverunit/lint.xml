@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="MissingTranslation">
+        <ignore path="res/values/arrays.xml" />
+    </issue>
+    <issue id="NewApi">
+        <ignore path="src/com/nec/sempro/serverunit/link/streaming/audio/GenericAudioStream.java" />
+    </issue>
 </lint>

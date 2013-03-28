@@ -1,4 +1,4 @@
-package net.majorkernelpanic.spydroid;
+package com.nec.sempro.serverunit.link.spydroid;
 
 /**
  * Licensed under the GNU LESSER GENERAL PUBLIC LICENSE, version 2.1, dated February 1999.

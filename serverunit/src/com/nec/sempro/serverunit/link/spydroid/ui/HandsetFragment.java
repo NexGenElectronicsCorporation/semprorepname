@@ -18,17 +18,18 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.spydroid.ui;
+package com.nec.sempro.serverunit.link.spydroid.ui;
 
 import java.util.Locale;
 
-import net.majorkernelpanic.http.TinyHttpServer;
-import net.majorkernelpanic.spydroid.R;
-import net.majorkernelpanic.spydroid.SpydroidApplication;
-import net.majorkernelpanic.spydroid.Utilities;
-import net.majorkernelpanic.spydroid.api.CustomHttpServer;
-import net.majorkernelpanic.streaming.SessionManager;
-import net.majorkernelpanic.streaming.misc.RtspServer;
+import com.nec.sempro.serverunit.link.http.TinyHttpServer;
+//import net.majorkernelpanic.spydroid.R;
+import com.nec.sempro.serverunit.R;
+import com.nec.sempro.serverunit.link.spydroid.SpydroidApplication;
+import com.nec.sempro.serverunit.link.spydroid.Utilities;
+import com.nec.sempro.serverunit.link.spydroid.api.CustomHttpServer;
+import com.nec.sempro.serverunit.link.streaming.SessionManager;
+import com.nec.sempro.serverunit.link.streaming.misc.RtspServer;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;

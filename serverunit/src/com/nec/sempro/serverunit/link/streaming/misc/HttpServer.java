@@ -19,7 +19,7 @@
  */
 
 
-package net.majorkernelpanic.streaming.misc;
+package com.nec.sempro.serverunit.link.streaming.misc;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -29,8 +29,8 @@ import java.net.URI;
 import java.util.Iterator;
 import java.util.List;
 
-import net.majorkernelpanic.http.TinyHttpServer;
-import net.majorkernelpanic.streaming.Session;
+import com.nec.sempro.serverunit.link.http.TinyHttpServer;
+import com.nec.sempro.serverunit.link.streaming.Session;
 
 import org.apache.http.HttpException;
 import org.apache.http.HttpRequest;

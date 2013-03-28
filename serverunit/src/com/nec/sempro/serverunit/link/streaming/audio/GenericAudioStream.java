@@ -1,11 +1,11 @@
-package net.majorkernelpanic.streaming.audio;
+package com.nec.sempro.serverunit.link.streaming.audio;
 
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-import net.majorkernelpanic.streaming.Stream;
+import com.nec.sempro.serverunit.link.streaming.Stream;
 import android.net.rtp.AudioCodec;
 import android.net.rtp.AudioGroup;
 import android.net.rtp.AudioStream;

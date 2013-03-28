@@ -18,7 +18,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.spydroid;
+package com.nec.sempro.serverunit.link.spydroid;
 
 import static org.acra.ReportField.ANDROID_VERSION;
 import static org.acra.ReportField.APP_VERSION_NAME;
@@ -31,11 +31,11 @@ import static org.acra.ReportField.SHARED_PREFERENCES;
 import static org.acra.ReportField.STACK_TRACE;
 import static org.acra.ReportField.USER_APP_START_DATE;
 import static org.acra.ReportField.USER_CRASH_DATE;
-import net.majorkernelpanic.spydroid.api.CustomHttpServer;
-import net.majorkernelpanic.streaming.Session;
-import net.majorkernelpanic.streaming.SessionManager;
-import net.majorkernelpanic.streaming.video.H264Stream;
-import net.majorkernelpanic.streaming.video.VideoQuality;
+import com.nec.sempro.serverunit.link.spydroid.api.CustomHttpServer;
+import com.nec.sempro.serverunit.link.streaming.Session;
+import com.nec.sempro.serverunit.link.streaming.SessionManager;
+import com.nec.sempro.serverunit.link.streaming.video.H264Stream;
+import com.nec.sempro.serverunit.link.streaming.video.VideoQuality;
 
 import org.acra.annotation.ReportsCrashes;
 

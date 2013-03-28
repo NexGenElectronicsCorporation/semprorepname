@@ -18,13 +18,13 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.streaming;
+package com.nec.sempro.serverunit.link.streaming;
 
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Random;
 
-import net.majorkernelpanic.streaming.rtp.AbstractPacketizer;
+import com.nec.sempro.serverunit.link.streaming.rtp.AbstractPacketizer;
 import android.media.MediaRecorder;
 import android.net.LocalServerSocket;
 import android.net.LocalSocket;

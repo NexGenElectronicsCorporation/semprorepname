@@ -18,13 +18,14 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-package net.majorkernelpanic.spydroid.ui;
+package com.nec.sempro.serverunit.link.spydroid.ui;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.majorkernelpanic.spydroid.R;
-import net.majorkernelpanic.spydroid.SpydroidApplication;
+//import net.majorkernelpanic.spydroid.R;
+import com.nec.sempro.serverunit.R;
+import com.nec.sempro.serverunit.link.spydroid.SpydroidApplication;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
