@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class PIMActivity extends Activity {
 	
-	private static final String TAG = "PIMActivity";
+	private static final String TAG = "Server Unit";
 	private Button launchButton;
 
     

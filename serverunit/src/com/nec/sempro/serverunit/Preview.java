@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
 import android.hardware.Camera.Size;
+import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -103,6 +104,7 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback {
 			mCamera.stopPreview();
 			mCamera.release();
 			mCamera = null;
+         	mHolder.removeCallback(this);
 		}
 	}
 
