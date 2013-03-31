@@ -66,7 +66,7 @@ public class MotionDetection {
 		if(mBackground == null) {
 			mBackground = AndroidImageFactory.createImage(data, mSize.value, 
 					mPixelFormat.value);//.erode(mErosionLevel.value);
-			Log.i(TAG, "Creating background image");
+//			Log.i(TAG, "Creating background image");
 			return false;
 		}
 		
@@ -79,7 +79,7 @@ public class MotionDetection {
 		motionDetected = mAndroidImage.isDifferent(mBackground, 
 				mPixelThreshold.value, mThreshold.value);
 
-		Log.i(TAG, "Image is different ? " + motionDetected);
+	//	Log.i(TAG, "Image is different ? " + motionDetected);
 		
 		mBackground = mAndroidImage;
 		

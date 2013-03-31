@@ -1,11 +1,8 @@
 package com.nec.sempro.clientunit;
 
 import java.io.IOException;
-
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnInfoListener;
-import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -14,6 +11,9 @@ import android.view.Menu;
 import android.widget.TextView;
 
 public class AlertNotifier extends Activity {
+	
+	
+	MediaPlayer mp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,22 +23,19 @@ public class AlertNotifier extends Activity {
 		int maxvol = audioManager.getStreamMaxVolume(audioManager.STREAM_MUSIC);
 		audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, maxvol, 0);
 		Intent intent = getIntent();
-		String str = intent.getExtras().getString("sendstr");
+		String str = intent.getExtras().getString("sendstr"); 
 		TextView t= (TextView) findViewById(R.id.poptext);
 	      t.setText(str);
-		  MediaPlayer mp = MediaPlayer.create(AlertNotifier.this, R.raw.alerttune);
+	     mp =  MediaPlayer.create(AlertNotifier.this, R.raw.alerttune);
 		  
-		 
-          OnPreparedListener listener = new MediaPlayer.OnPreparedListener() {
-			
-			@Override
-			public void onPrepared(MediaPlayer mp) {
-				// TODO Auto-generated method stub
-				
-			}
-		};
-         mp.setOnPreparedListener(listener);
-          mp.start();
+		 try {
+             mp.prepareAsync();
+         } catch (IllegalStateException e) {
+             // TODO Auto-generated catch block
+             e.printStackTrace();
+         } 
+          
+         mp.start();
 
          
 	
@@ -51,4 +48,22 @@ public class AlertNotifier extends Activity {
 		return true;
 	}
 
+
+
+
+	protected void onPause()
+	{
+		mp.pause();
+		super.onPause();
+	}
+	protected void onStop()
+	{
+		mp.pause();
+		mp.stop();
+		super.onStop();
+	}
+	public void onDestroy()
+	{
+		super.onDestroy();
+	}
 }

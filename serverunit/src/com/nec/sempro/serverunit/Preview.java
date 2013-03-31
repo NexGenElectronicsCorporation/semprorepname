@@ -3,6 +3,8 @@ package com.nec.sempro.serverunit;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
@@ -12,13 +14,21 @@ import android.hardware.Camera;
 import android.hardware.Camera.Size;
 import android.os.Bundle;
 import android.os.Environment;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import com.nec.sempro.serverunit.io.DataSink;
 import com.nec.sempro.serverunit.io.DataWriter;
 import com.nec.sempro.serverunit.io.FileUtils;
+import com.nec.sempro.serverunit.AlertDispatch;
+import com.nec.sempro.serverunit.Recorder;
+import com.nec.sempro.serverunit.hosting.StreamCameraActivity;
+
+//mCameraView= new Preview(this);
+//setContentView(mCameraView);
 
 /**
  * Extends SurfaceView to preview the Camera frames.
@@ -40,7 +50,9 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback {
 	private SurfaceHolder mHolder;
 	private Camera mCamera;
 	private Context mContext;
-
+	public StreamCameraActivity sca; 
+	
+     
 	private CameraCallback mCameraCallback;
 	private boolean mMotionDetectionActive;
 
@@ -53,7 +65,7 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback {
 		// when the underlying surface is created and destroyed
 		mHolder = getHolder();
 		mHolder.addCallback(this);
-		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+		//mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 		
 		@SuppressWarnings("static-access")
 		SharedPreferences prefs = mContext.getSharedPreferences(PREFS_NAME,
@@ -68,7 +80,7 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback {
 		Camera.Parameters parameters = mCamera.getParameters();
 		parameters.setPreviewSize(width, height);
 		mCamera.setParameters(parameters);
-		
+		//mCamera.setDisplayOrientation(90);
 		mCamera.startPreview();
 	}
 
@@ -85,6 +97,8 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback {
 			mCamera.setPreviewCallback(mCameraCallback);
 			try {
 				mCamera.setPreviewDisplay(holder);
+		    		sca.mPreviewDisplayCreated = true;
+				sca.tryStartCameraStreamer();
 			} catch (IOException exception) {
 				Log.e(TAG, "IOException caused by setPreviewDisplay()", exception);
 				closeCamera();
@@ -94,6 +108,8 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback {
 
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
+		sca.mPreviewDisplayCreated = false;
+		sca.ensureCameraStreamerStopped();
 		closeCamera();
 	}
 
@@ -170,26 +186,32 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback {
 			Log.d(TAG, "Focus mode: " + params.getFocusMode());
 		}
 	}
+	
+	
+	
+	
 }
 
 final class CameraCallback implements Camera.PreviewCallback, 
 	Camera.PictureCallback {
 
 	private final String PICTURE_PREFIX = "/Pictures/pim/";
-	private static final int PICTURE_DELAY = 4000;
+	private static final int PICTURE_DELAY = 4500;
 	
 	private static final String TAG = "CameraCallback";
 	private MotionDetection mMotionDetection;
 	private Camera mCamera;
+	private Context mContext;
 	
 	private long mReferenceTime;
 	private DataWriter mDataWriter;
+	
 
 	public CameraCallback(Context ct, Camera camera) {
 		mDataWriter = new DataWriter();
-		
+		mContext = ct;
 		mCamera = camera;
-
+		//new Recorder(mCamera);
 		mMotionDetection = new MotionDetection(ct.getSharedPreferences(
 				MotionDetection.PREFS_NAME, Context.MODE_PRIVATE));
 	}
@@ -198,13 +220,26 @@ final class CameraCallback implements Camera.PreviewCallback,
 	public void onPictureTaken(byte[] data, Camera camera) {
 		Log.i(TAG, "Picture Taken");
 
-		String pictureName = PICTURE_PREFIX+System.currentTimeMillis()+".jpg";
+		String pictureName = System.currentTimeMillis()+".jpg";
+		File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
+	             Environment.DIRECTORY_PICTURES), "Surveillance Storage");
+	   
+
+	   if (! mediaStorageDir.exists()){
+	       if (! mediaStorageDir.mkdirs()){
+	           Log.d("Surveillance Storage", "failed to create directory");
+	           
+	       }
+	   }
+		
+		
 		File f = new File(
-				Environment.getExternalStorageDirectory(),pictureName);
+				mediaStorageDir.getPath(),pictureName);
 		FileOutputStream fos = null;
 		try {
 			FileUtils.touch(f);
 			fos = new FileOutputStream(f);
+			Toast.makeText(mContext, "Picture captured", Toast.LENGTH_SHORT).show();
 		} catch (IOException e) {
 			Log.e(TAG, "Cannot write picture to disk");
 			e.printStackTrace();
@@ -227,6 +262,8 @@ final class CameraCallback implements Camera.PreviewCallback,
 				mReferenceTime = now + PICTURE_DELAY;
 				Log.i(TAG, "Taking picture");
 				camera.takePicture(null, null, this);
+				AlertDispatch ad = new AlertDispatch(mContext);
+				 
 			} else {
 				Log.i(TAG, "Not taking picture because not enough time has "
 						+ "passed since the creation of the Surface");

@@ -29,8 +29,8 @@ public class SmsListener  extends BroadcastReceiver{
                         msgs[i] = SmsMessage.createFromPdu((byte[])pdus[i]);
                         msg_from = msgs[i].getOriginatingAddress();
                         String msgBody = msgs[i].getMessageBody();
-                        str = "SMS from " + msgs[i].getOriginatingAddress()+ " :" + msgs[i].getMessageBody().toString();
-                       // str = "SMS received from surveillance system :" + msgs[i].getMessageBody().toString();
+                        //str = "SMS from " + msgs[i].getOriginatingAddress()+ " :" + msgs[i].getMessageBody().toString();
+                        str = "Intel received from Surveillance System :" + msgs[i].getMessageBody().toString();
                     }
                 }
                     catch(Exception e){

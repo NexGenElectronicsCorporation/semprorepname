@@ -69,4 +69,7 @@
     <string name="page1">Preview</string>
     <string name="page2">About</string>
     
+    
+    <string name="settings">Settings</string>
+    
 </resources>

@@ -32,6 +32,8 @@ public class CameraActivity extends Activity {
 		
 		mCameraView= new Preview(this);
 		setContentView(mCameraView);
+		
+		
 	}
    
 }

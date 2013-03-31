@@ -30,6 +30,7 @@
             android:name="com.nec.sempro.clientunit.AlertNotifier"
             android:label="@string/app_name" >
             <intent-filter>
+                 <action android:name="android.intent.action.LAUNCH" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
