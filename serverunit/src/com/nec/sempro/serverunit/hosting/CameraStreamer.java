@@ -22,6 +22,7 @@ import java.io.OutputStream;
 
 import com.nec.sempro.serverunit.AlertDispatch;
 import com.nec.sempro.serverunit.MotionDetection;
+import com.nec.sempro.serverunit.Recorder;
 import com.nec.sempro.serverunit.io.DataSink;
 import com.nec.sempro.serverunit.io.DataWriter;
 import com.nec.sempro.serverunit.io.FileUtils;

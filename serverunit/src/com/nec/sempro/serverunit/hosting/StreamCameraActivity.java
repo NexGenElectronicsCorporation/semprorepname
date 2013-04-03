@@ -155,7 +155,13 @@ public final class StreamCameraActivity extends Activity implements SurfaceHolde
         ensureCameraStreamerStopped();
     } // onPause()
 
-    
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        finishActivity(0);      
+        
+    } // onPause()
     @Override
     
     public void surfaceChanged(final SurfaceHolder holder, final int format, final int width,
@@ -352,44 +358,9 @@ public final class StreamCameraActivity extends Activity implements SurfaceHolde
      *
      *  @return the first IP address of the device, or null
      */
-    private static String tryGetIpAddress()
+    public static String tryGetIpAddress()
     {
-       /* try
-        {
-            final List<NetworkInterface> interfaces =
-                    Collections.list(NetworkInterface.getNetworkInterfaces());
-            for (final NetworkInterface intf : interfaces)
-            {
-                final List<InetAddress> addrs = Collections.list(intf.getInetAddresses());
-                for (final InetAddress addr : addrs)
-                {
-                    if (!addr.isLoopbackAddress())
-                    {
-                        final String sAddr = addr.getHostAddress().toUpperCase();
-                        if (InetAddressUtils.isIPv4Address(sAddr))
-                        {
-                          Log.i("StreamCameraActivity", "ipv4 returned");
-                        	return sAddr;
-
-                            
-                        } // if
-                        else
-                        {
-                            // Drop IP6 port suffix
-                            final int delim = sAddr.indexOf('%');
-                            Log.i("StreamCameraActivity", "ipv6 returned");
-                            return delim < 0 ? sAddr : sAddr.substring(0, delim);
-                        } // else
-                    } // if
-                } // for
-            } // for
-        } // try
-        catch (final Exception e)
-        {
-            // Ignore
-        } // for now eat exceptions
-   */
-    	
+         	
     	
     	        try {
     	            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());

@@ -79,7 +79,6 @@ public class Recorder
 	}
 	 recorder.stop();
 	 recorder.reset();   
-	 camera.lock();
 	 recorder.release();
 	 
    	
