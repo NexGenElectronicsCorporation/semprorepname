@@ -6,17 +6,15 @@
     android:layout_height="fill_parent"
     tools:ignore="HardcodedText" >
 
-    <TextView
-        android:id="@+id/poptext"
-        android:layout_width="290dp"
-        android:layout_height="201dp"
-        android:layout_above="@+id/widget42"
-        android:layout_alignRight="@+id/widget42"
-        android:layout_marginBottom="60dp"
-        android:textAppearance="@style/AppBaseTheme"
-        android:textColor="#ff000000"
-        android:textSize="24sp"
-        tools:ignore="SelectableText" />
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/alert"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/widget41"
@@ -24,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/widget42"
         android:layout_alignBottom="@+id/widget42"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="74dp"
+        android:layout_toRightOf="@+id/imageView1"
         android:text="view"
         android:textSize="26sp"
         android:textStyle="bold|italic"
@@ -35,22 +33,24 @@
         android:id="@+id/widget42"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="38dp"
-        android:layout_marginRight="32dp"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginRight="24dp"
         android:text="Discard"
         android:textSize="26sp"
         android:textStyle="bold|italic"
         android:typeface="sans" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/poptext"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/alert"
-        tools:ignore="ContentDescription" />
+    <TextView
+        android:id="@+id/poptext"
+        android:layout_width="290dp"
+        android:layout_height="201dp"
+        android:layout_above="@+id/widget41"
+        android:layout_alignLeft="@+id/widget41"
+        android:layout_alignRight="@+id/widget42"
+        android:textAppearance="@style/AppBaseTheme"
+        android:textColor="#ff000000"
+        android:textSize="24sp"
+        tools:ignore="SelectableText" />
 
 </RelativeLayout>
